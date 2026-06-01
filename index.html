@@ -549,7 +549,7 @@ background-color: #FCF8F1;
 <script>
     
 
-   const URL_APP = "https://script.google.com/macros/s/AKfycbz8V-6JJ2ZQpnLb3ofHvZRCWNeU1zS8rDLCgHqKCJKonsZHA3D77yuwm4HOZcBSkAHO/exec";
+  const URL_APP = "https://script.google.com/macros/s/AKfycbwZp_d4aLR9FIHWVo9wq-2ZxifOAXe-rrc0p04x1JgQUze9E5qMHoIe5BvPK-mvAeWx/exec";
 
 const form = document.querySelector("#form");
 form.action = URL_APP;
@@ -557,13 +557,18 @@ form.action = URL_APP;
 form.addEventListener("submit", async (ev) => {
   ev.preventDefault();
 
-  const name = document.querySelector("[name=name]:checked");
-  const choice = document.querySelector("[name=choice]:checked");
-  const message = document.querySelector("[name=message]");
+  // 1. Собираем данные ИМЕННО в момент нажатия кнопки «Отправить»
+  const attendance = document.querySelector('input[name="name"]:checked');
+  // Ищем выбранную плитку по имени "count"
+  const countElement = document.querySelector('input[name="count"]:checked'); 
+  const message = document.querySelector('textarea[name="message"]');
 
+  // 2. Формируем объект. 
+  // ВАЖНО: поле 'choice' — это ваша третья колонка в таблице.
+  // Мы берем значение из 'countElement' и кладем его в 'choice'.
   let details = {
-    name: name ? name.value : '',
-    choice: choice ? choice.value : '',
+    name: attendance ? attendance.value : '',
+    choice: countElement ? countElement.value : '', 
     message: message.value.trim(),
   };
 
@@ -575,9 +580,9 @@ form.addEventListener("submit", async (ev) => {
   }
   formBody = formBody.join("&");
 
-  // форманы тазалау
-  if (name) name.checked = false;
-  if (choice) choice.checked = false;
+  // Очистка формы после нажатия
+  if (attendance) attendance.checked = false;
+  if (countElement) countElement.checked = false;
   message.value = '';
 
   alert('Жауабыңызға рахмет!');
@@ -591,12 +596,9 @@ form.addEventListener("submit", async (ev) => {
     body: formBody,
   }).catch((err) => {
     console.error('Error:', err);
-    alert("Ошибка!");
+    alert("Ошибка отправки!");
   });
 });
-
-
-
 
 
 
@@ -622,15 +624,6 @@ form.addEventListener("submit", async (ev) => {
     for (let elm of elements) { 
       observer.observe(elm); 
     }
-
-
-
-
-
-
-
-
-
 
 
 
