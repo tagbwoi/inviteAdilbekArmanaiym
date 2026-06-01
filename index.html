@@ -64,7 +64,7 @@ width: 100%;
    height: 50%;
 
 }
-.countdown-container {
+/* .countdown-container {
     margin: 0;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       font-size: 0.7rem;
@@ -75,8 +75,14 @@ width: 100%;
       display: flex;
       justify-content: center;
      background-color: none;
+} */
+.countdown-container h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #710014;
+    align-self: center; /* Центрируем по вертикали */
+    margin-top: -20px;  /* Немного поднимаем, если двоеточия упадут слишком низко */
 }
-
 
 .countdown-item {
       position: relative;
@@ -94,14 +100,17 @@ width: 100%;
     }
 
 
+/* Ищем этот блок в вашем коде */
 .countdown-item span {
-       display: block;
-    font-size: 35px;
+    display: block;
+    font-size: 55px;            /* Увеличили с 35px до 55px */
+    font-weight: 800;           /* Сделали жирным (Bold) */
     margin-bottom: 1px;
-    color: #3F3F3F;
+    color: #710014;             /* Сделал в цвет вашей темы (бордовый), чтобы смотрелось стильнее */
     border-radius: 5px;
     padding: 5px;
     animation: pulse 1s ease infinite alternate;
+    line-height: 1.1;           /* Немного поджали высоту строки для аккуратности */
 }
 
 
