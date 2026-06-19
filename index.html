@@ -2,40 +2,21 @@
 <html lang="ru">
 <head>
 
-
-
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Үйлену тойына шақыру!">
     <meta property="og:description" content="28.08.2026">
     <meta property="og:image" content="" >
 
-
-<link rel="stylesheet"  href="css.css">
-
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Үйлену тойына шақыру!</title> 
-
-
-
-
+    <link rel="stylesheet" href="css.css">
+    <title>Үйлену тойына шақыру!</title> 
 
 <style>
-    
-
-
 @media screen and (max-width: 1280px) {div.contentblock {width: 1200px;} } 
 @media screen and (max-width: 1140px) { div.contentblock {width: 1024px;} } 
-@media screen and (max-width: 992px) { div. contentblock {width: 970px;} } 
-
-
-
-
-
+@media screen and (max-width: 992px) { div.contentblock {width: 970px;} } 
 
 .element-animation{ 
     top: 0px; 
@@ -43,88 +24,61 @@
     position: relative; 
 } 
 .element-animation.element-show{ 
-position: relative; 
-top: 20px; 
-opacity: 1; 
-transition-duration: 1.4s; 
+    position: relative; 
+    top: 20px; 
+    opacity: 1; 
+    transition-duration: 1.4s; 
 }
-
-
-
-
-
-
-
 
 .conteiner{
-
-  background-size: 100%;
-overflow: hide;
-width: 100%;
-   height: 50%;
-
+    background-size: 100%;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
 }
- .countdown-container {
+
+.countdown-container {
     margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      font-size: 0.7rem;
-      font-weight: 200;
-      line-height: 1.0;
-      -webkit-text-size-adjust: 80%;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      display: flex;
-      justify-content: center;
-     background-color: none;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 200;
+    line-height: 1.0;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
 } 
+
 .countdown-container h2 {
     font-size: 40px;
     font-weight: bold;
     color: #710014;
-    margin: 0 5px; /* Зазоры по бокам */
-    line-height: 55px; /* Высота под размер цифр, чтобы двоеточие было ровно по центру */
-}
+    margin: 0 5px;
+    line-height: 55px;
 }
 
 .countdown-item {
     position: relative;
-    min-width: 65px; /* Увеличили с 40 до 65, чтобы большие цифры не теснились */
+    min-width: 65px; 
     text-align: center;
     margin: 0 5px;
 }
 
-    .countdown:not(:last-child)::after {
-      content: ':';
-      position: absolute;
-      right: -15px;
-
-    }
-
-
-/* Ищем этот блок в вашем коде */
 .countdown-item span {
     display: block;
-    font-size: 55px;            /* Увеличили с 35px до 55px */
-    font-weight: 800;           /* Сделали жирным (Bold) */
+    font-size: 55px;            
+    font-weight: 800;           
     margin-bottom: 1px;
-    color: #710014;             /* Сделал в цвет вашей темы (бордовый), чтобы смотрелось стильнее */
+    color: #710014;             
     border-radius: 5px;
     padding: 5px;
     animation: pulse 1s ease infinite alternate;
-    line-height: 1.1;           /* Немного поджали высоту строки для аккуратности */
+    line-height: 1.1;           
 }
 
-
-
-
-
-
-
-
-      .form-inner {
+.form-inner {
    position: relative;
 }
 
-}
 .form-inner label {
    display: block;
    padding-left: 15px;
@@ -132,70 +86,23 @@ width: 100%;
    color: rgba(255, 255, 255, .6);
    text-transform: uppercase;
    font-size: 15px;
-padding: 0 15px;
+   padding: 0 15px;
    margin: 10px 0 15px;
 }
 
-.btn {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-
-  transition: transform 0.3s ease;
+/* Стили для нового блока с именем гостя */
+.guest-welcome-block {
+    display: none; /* Скрыт по умолчанию, покажется только если есть параметр n */
+    font-family: 'Piazzolla', serif;
+    color: #710014;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 25px auto 0px auto;
+    text-align: center;
+    width: 90%;
+    line-height: 1.4;
 }
 
-/* Стили для кнопки с эффектом при нажатии */
-.btn {
-  transform: scale(1.1); /* Увеличиваем кнопку при активации */
-}
-
-
-/* 
-.form-inner textarea {
-   width: 80%;
-   text-align: center;
-   margin-top: 5px;
- 
-   border-radius: 10px;
-    margin-bottom: 0px;
-    font-size: 16px;
-    font-weight: 300;
-    background-color: #FCF8F1;
-    border-color: #1d3f57  0.5px;
-    letter-spacing: 0.11em;
- height: 30px;
-   font-family: 'Roboto', sans-serif;
-  
-}
-
-.form-inner input[type="submit"] {
-    background: linear-gradient(to top left, #5A753B 0%, #5A753B 100%);
-       width: 80%;
-height: 30PX;
-text-align: center;
-    border: 0;
-    border-bottom: 2px  #aaa;
-       border-radius: 10px;
-    font-size: 16px;
-    font-weight: 400;
-    background-color: #FFFAF8  ;
-    letter-spacing: 0.11em;
-   font-family: 'Roboto', sans-serif;
-  padding: 0 10px;
-   margin: 10px 0 1px;
-
-}
-.radio-group{
-  text-align: left;
-  width: 80%;
-  font-size: 20px;
-  margin-top: 1px;
-  margin-bottom: 1px;
-  color: #000000;
-} */
-
-/* Заголовки формы */
 .form-title {
     font-family: 'Piazzolla', serif;
     color: #710014;
@@ -212,7 +119,6 @@ text-align: center;
     text-align: center;
 }
 
-/* Стили кнопок выбора (attendance) */
 .attendance-options {
     display: flex;
     flex-direction: column;
@@ -222,7 +128,7 @@ text-align: center;
 }
 
 .custom-radio input {
-    display: none; /* Скрываем стандартный кружок */
+    display: none; 
 }
 
 .radio-btn {
@@ -243,7 +149,6 @@ text-align: center;
     box-shadow: 0 4px 10px rgba(113, 0, 20, 0.2);
 }
 
-/* Стили текстового поля */
 #message {
     width: 85%;
     border: none;
@@ -257,7 +162,6 @@ text-align: center;
     text-align: center;
 }
 
-/* Кнопка отправить */
 .btn-submit {
     margin-top: 40px;
     background: #710014 !important;
@@ -272,100 +176,75 @@ text-align: center;
 }
 
 body{
-background-color: #FCF8F1;
+    background-color: #FCF8F1;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Стили для модального окна */
+.modal {
+    display: block; 
+    position: fixed;
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+.modal-content {
+    background-color: #FCF8F1;
+    margin: 30% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+}
+.kk{
+    width: 100%;
+    height: 100%;
+}
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #FCF8F1;
+    border-radius: 5px;
+    border-color: #000000;
+}
+body.modal-open {
+    overflow: hidden;
 }
 </style>
-
-
-
-
- <style>
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
-
-  </style>
-
-
-
-
-
-
-
-
-
- <style>
-        /* Стили для модального окна */
-        .modal {
-            display: block; /* Модальное окно отображается сразу */
-            position: fixed;
-            z-index: 9999; /* Модальное окно поверх всех элементов */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Затемнённый фон */
-        }
-        .modal-content {
-            background-color: #FCF8F1;
-            margin: 30% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            text-align: center;
-        }
-        .kk{
-          width: 100%;
-          height: 100%;
-     }
-          button {
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            background-color: #FCF8F1;
-            border-radius: 5px;
-            border-color: #000000;
-        }
-        /* Отключение скроллинга страницы */
-        body.modal-open {
-            overflow: hidden;
-        }
-    </style>
-
-
 </head>
 <body>
-
-
 
 <center>
 <div class="fade-in" id="content">
 <img src="hgmm.jpg" style="width: 100%; " loading="eager">
 </div></center>
 
-
+<center>
+    <div id="guest-welcome" class="guest-welcome-block"></div>
+</center>
 
 <center>
 <div class="element-animation"> 
-<img src="uli.jpg" style="width: 100%; margin-top: 20px;">
+<img id="main-invite-img" src="uli.jpg" style="width: 100%; margin-top: 20px;">
 </div></center>
-
-
-
 
 <center>
 <div class="element-animation"> 
 <img src="ftht.jpg" style="width: 100%; margin-top: 30px;">
 </div></center>
-
 
 <center>
 <div class="countdown-container" style="margin-top:50px;">
@@ -391,58 +270,35 @@ background-color: #FCF8F1;
 </div>
 </center>
 
-
-
 <center>
 <div class="element-animation"> <a href="https://go.2gis.com/AeGva">
 <img src="hjh.jpg" style="width: 100%; margin-top: 40px;"></a>
 </div></center>
 
-
-
-
-
-
-
 <center>
 <div class="element-animation"> 
-<img src="hgmhg.jpg" style="width: 100%;margin-top: 50px; margin-bottom: 25px;"  >
-
+<img src="hgmhg.jpg" style="width: 100%;margin-top: 50px; margin-bottom: 25px;" >
 </div></center>
-
-
-
-
-
-
-
 
 <center style="margin-top: 0px;">
 <form class="transparent" method="post" id="form">
   <div class="form-inner">
-    
-    <!-- Заголовок анкеты -->
     <p class="form-title">Тойымыздың қадірлі қонағы болыңыз!</p>
-
-    <!-- Первый вопрос: Придете ли вы? -->
     <div class="attendance-options">
       <label class="custom-radio">
         <input type="radio" name="name" value="Иә, әрине келемін" required>
         <div class="radio-btn">Иә, әрине келемін</div>
       </label>
-      
       <label class="custom-radio">
         <input type="radio" name="name" value="Жұбайыммен келемін">
         <div class="radio-btn">Жұбайыммен келемін</div>
       </label>
-      
       <label class="custom-radio">
         <input type="radio" name="name" value="Өкінішке орай, келе алмаймын">
         <div class="radio-btn">Келе алмаймын</div>
       </label>
     </div>
 
-    <!-- Второй вопрос: Сколько человек (плитка 2х2) -->
     <p class="form-subtitle">Қанша адам келесіздер?</p>
     <div class="people-selection-grid">
       <label class="person-option"><input type="radio" name="count" value="1" required><div class="box">1</div></label>
@@ -451,31 +307,17 @@ background-color: #FCF8F1;
       <label class="person-option"><input type="radio" name="count" value="4"><div class="box">4</div></label>
     </div>
 
-    <!-- Поле для имени -->
     <textarea required name="message" maxlength="100" id="message" cols="30" rows="1" placeholder="Есіміңізді жазыңыз"></textarea>
-
-    <!-- Кнопка отправить -->
     <input type="submit" value="Жауапты жіберу" class="btn-submit">
   </div>
 </form>
 </center>
 
-
-
-
-
-
-
 <center>
 <div class="element-animation"> 
-<img src="njm.jpg" style="width: 100%;margin-top: 50px; "  >
-
+<img src="njm.jpg" style="width: 100%;margin-top: 50px; " >
 </div></center>
 
-
-
-
-<!-- Модал -->
 <div id="musicModal" class="modal">
     <div class="modal-content">
         <img src="liul.jpg" class="kk">
@@ -483,93 +325,65 @@ background-color: #FCF8F1;
     </div>
 </div>
 
-<!-- Аудио -->
 <audio id="backgroundMusic" loop playsinline preload="auto">
   <source src="jh,ghhm.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-  // ===== Параметрлер =====
-  const SPEED_PX_PER_SEC = 33;      // жылдамдық (px/сек)
-  const RESTART_DELAY_MS = 3000;    // пайдаланушы әрекетінен кейін қайта қосу кідірісі
+  const SPEED_PX_PER_SEC = 33;      
+  const RESTART_DELAY_MS = 3000;    
 
-  // ===== Элементтер =====
   const modal = document.getElementById("musicModal");
   const playButton = document.getElementById("playMusic");
   const audio = document.getElementById("backgroundMusic");
 
   document.documentElement.style.scrollBehavior = 'auto';
   document.body.style.scrollBehavior = 'auto';
-  document.body.style.overflow = 'hidden'; // модал ашық кезде скролды бұғаттау
+  document.body.style.overflow = 'hidden'; 
 
-  // ===== Күй =====
   let isRunning = false;    
   let resumeTimer = null;   
   let rafId = null;         
   let lastTs = 0;           
   let accum = 0;            
 
-  // Қауіпсіз скрол функциясы
   function safeScrollBy(step) {
-    const before = window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop || 0;
-
+    const before = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     window.scrollBy(0, step);
-
-    let after = window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop || 0;
-
+    let after = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     if (after === before) {
       document.documentElement.scrollTop = before + step;
-      after = window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop || 0;
-
-      if (after === before) {
-        document.body.scrollTop = before + step;
-      }
+      after = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      if (after === before) { document.body.scrollTop = before + step; }
     }
   }
 
   function atBottom() {
-    const maxScroll =
-      Math.max(document.documentElement.scrollHeight, document.body.scrollHeight) - window.innerHeight;
-    const y = window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop || 0;
+    const maxScroll = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight) - window.innerHeight;
+    const y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     return y >= maxScroll - 1;
   }
 
-  // Негізгі цикл
   function loop(ts) {
     rafId = requestAnimationFrame(loop);
     if (!isRunning) { lastTs = ts; return; }
     if (!lastTs) lastTs = ts;
-
     const dt = ts - lastTs;
     lastTs = ts;
-
     accum += (SPEED_PX_PER_SEC * dt) / 1000;
-
     const step = Math.floor(accum);
     if (step >= 1) {
       accum -= step;
-
       if (atBottom()) {
-        // === Соңына жеткенде тоқтату ===
         stopAuto();
         cancelAnimationFrame(rafId);
         rafId = null;
         return;
       }
-
       safeScrollBy(step);
     }
   }
 
-  // Авто-скролды басқару
   function startAuto() { if (!isRunning) { isRunning = true; } }
   function stopAuto()  { isRunning = false; }
 
@@ -578,7 +392,6 @@ background-color: #FCF8F1;
     resumeTimer = setTimeout(() => startAuto(), RESTART_DELAY_MS);
   }
 
-  // Пайдаланушы әрекеттерін тыңдау
   const onInteract = () => { stopAuto(); restartAfterDelay(); };
   window.addEventListener('touchstart', onInteract, { passive: true });
   window.addEventListener('touchmove',  onInteract, { passive: true });
@@ -591,7 +404,6 @@ background-color: #FCF8F1;
     else { restartAfterDelay(); }
   });
 
-  // Модалды жабу
   function closeModal() {
     modal.style.display = 'none';
     document.body.style.overflow = '';
@@ -605,11 +417,7 @@ background-color: #FCF8F1;
   });
 </script>
 
-
-
-
-  <script>
-
+<script>
     document.addEventListener("DOMContentLoaded", function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -619,35 +427,24 @@ background-color: #FCF8F1;
           }
         });
       });
-
       var elements = document.querySelectorAll(".fade-in");
       elements.forEach(function(element) {
         observer.observe(element);
       });
     });
-  </script>
-
+</script>
 
 <script>
-    
-
-  const URL_APP = "https://script.google.com/macros/s/AKfycbwZp_d4aLR9FIHWVo9wq-2ZxifOAXe-rrc0p04x1JgQUze9E5qMHoIe5BvPK-mvAeWx/exec";
-
+const URL_APP = "https://script.google.com/macros/s/AKfycbwZp_d4aLR9FIHWVo9wq-2ZxifOAXe-rrc0p04x1JgQUze9E5qMHoIe5BvPK-mvAeWx/exec";
 const form = document.querySelector("#form");
 form.action = URL_APP;
 
 form.addEventListener("submit", async (ev) => {
   ev.preventDefault();
-
-  // 1. Собираем данные ИМЕННО в момент нажатия кнопки «Отправить»
   const attendance = document.querySelector('input[name="name"]:checked');
-  // Ищем выбранную плитку по имени "count"
   const countElement = document.querySelector('input[name="count"]:checked'); 
   const message = document.querySelector('textarea[name="message"]');
 
-  // 2. Формируем объект. 
-  // ВАЖНО: поле 'choice' — это ваша третья колонка в таблице.
-  // Мы берем значение из 'countElement' и кладем его в 'choice'.
   let details = {
     name: attendance ? attendance.value : '',
     choice: countElement ? countElement.value : '', 
@@ -662,7 +459,6 @@ form.addEventListener("submit", async (ev) => {
   }
   formBody = formBody.join("&");
 
-  // Очистка формы после нажатия
   if (attendance) attendance.checked = false;
   if (countElement) countElement.checked = false;
   message.value = '';
@@ -671,9 +467,7 @@ form.addEventListener("submit", async (ev) => {
 
   fetch(URL_APP, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-    },
+    headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
     mode: "no-cors",
     body: formBody,
   }).catch((err) => {
@@ -682,43 +476,19 @@ form.addEventListener("submit", async (ev) => {
   });
 });
 
-
-
-
-
-
-
-
-
-     function onEntry(entry) { 
-      entry.forEach(change => { 
-        if (change.isIntersecting) { 
-         change.target.classList.add('element-show'); 
-         
-        } 
-      }); 
-    } 
-        let options = { 
-      threshold: [0.5] }; 
-    let observer = new IntersectionObserver(onEntry, options); 
-    let elements = document.querySelectorAll('.element-animation'); 
-     
-    for (let elm of elements) { 
-      observer.observe(elm); 
-    }
-
-
-
+function onEntry(entry) { 
+  entry.forEach(change => { 
+    if (change.isIntersecting) { change.target.classList.add('element-show'); } 
+  }); 
+} 
+let options = { threshold: [0.5] }; 
+let observer = new IntersectionObserver(onEntry, options); 
+let elements = document.querySelectorAll('.element-animation'); 
+for (let elm of elements) { observer.observe(elm); }
 </script>
 
-
-
-
-
-
 <script async>
-
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     function updateCountdown() {
         const endDate = new Date("August 28, 2026 18:00:00").getTime();
         const now = new Date().getTime();
@@ -742,24 +512,39 @@ form.addEventListener("submit", async (ev) => {
             document.getElementById("seconds").innerText = "00";
         }
     }
-
     const timerInterval = setInterval(updateCountdown, 1000);
     updateCountdown();
 });
-
-
-
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestName = urlParams.get('n'); 
+    
+    if (guestName) {
+        // Очищаем плюсы из ссылки и превращаем их в пробелы
+        const cleanName = guestName.replace(/\+/g, ' ');
 
-
-
-
+        // 1. Меняем картинку uli.jpg на uli1.jpg (замени имя файла на нужное, если оно другое)
+        const inviteImg = document.getElementById('main-invite-img');
+        if (inviteImg) {
+            inviteImg.src = "uli1.jpg";
+        }
+        
+        // 2. Отображаем текст обращения сверху
+        const welcomeBlock = document.getElementById('guest-welcome');
+        if (welcomeBlock) {
+            welcomeBlock.innerText = "Құрметті " + cleanName + "!";
+            welcomeBlock.style.display = "block"; // Показываем блок гостю
+        }
+    }
+});
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https: //fonts.googleapis.com/css2?family= Piazzolla :wght@100 & display=swap" rel="stylesheet">
-
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" async></script>
+<link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@100&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" async></script>
 </body>
 </html>
