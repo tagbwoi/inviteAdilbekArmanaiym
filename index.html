@@ -92,12 +92,12 @@
 
 /* Стили для нового блока с именем гостя */
 .guest-welcome-block {
-    display: none; /* Скрыт по умолчанию, покажется только если есть параметр n */
+    display: none; 
     font-family: 'Piazzolla', serif;
     color: #710014;
     font-size: 26px;
     font-weight: bold;
-    margin: 20px auto 0px auto;
+    margin: 25px auto 10px auto;
     text-align: center;
     width: 90%;
     line-height: 1.4;
@@ -149,6 +149,41 @@
     box-shadow: 0 4px 10px rgba(113, 0, 20, 0.2);
 }
 
+/* ======================================================= */
+/* ВОТ ЭТИ СТИЛИ СЕТКИ И ЦИФР БЫЛИ ДОБАВЛЕНЫ ДЛЯ ИСПРАВЛЕНИЯ */
+.people-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.person-option input {
+    display: none; /* Скрываем стандартный радио-кружок */
+}
+
+.person-option .box {
+    border: 1.5px solid #710014;
+    border-radius: 12px;
+    padding: 12px 0;
+    text-align: center;
+    color: #710014;
+    font-family: 'Piazzolla', serif;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    background: transparent;
+}
+
+.person-option input:checked + .box {
+    background-color: #710014;
+    color: white;
+    box-shadow: 0 4px 10px rgba(113, 0, 20, 0.2);
+}
+/* ======================================================= */
+
 #message {
     width: 85%;
     border: none;
@@ -189,7 +224,6 @@ body{
   transform: translateY(0);
 }
 
-/* Стили для модального окна */
 .modal {
     display: block; 
     position: fixed;
@@ -523,20 +557,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const guestName = urlParams.get('n'); 
     
     if (guestName) {
-        // Очищаем плюсы из ссылки и превращаем их в пробелы
         const cleanName = guestName.replace(/\+/g, ' ');
 
-        // 1. Меняем картинку uli.jpg на uli1.jpg (замени имя файла на нужное, если оно другое)
+        // 1. Меняем картинку uli.jpg на персональную uli1.jpg
         const inviteImg = document.getElementById('main-invite-img');
         if (inviteImg) {
             inviteImg.src = "uli1.jpg";
         }
         
-        // 2. Отображаем текст обращения сверху
+        // 2. Показываем блок с обращением по имени гостя сверху
         const welcomeBlock = document.getElementById('guest-welcome');
         if (welcomeBlock) {
             welcomeBlock.innerText = "Құрметті " + cleanName + "!";
-            welcomeBlock.style.display = "block"; // Показываем блок гостю
+            welcomeBlock.style.display = "block"; 
         }
     }
 });
